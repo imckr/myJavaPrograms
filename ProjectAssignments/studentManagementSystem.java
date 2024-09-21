@@ -1,76 +1,133 @@
-public class Student {
-    String name;
-    int age;
-    int rollNo;
-    String courseName;
-    double averageMarks;
-    
-    public Student(String name, int age, int rollNo, String courseName, double averageMarks) {
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * Student Management System
+ * This program allows you to add, update, and display student details.
+ */
+
+
+// Class to represent a student
+class Student {
+    private int id;
+    private String name;
+    private int age;
+
+    // Constructor
+    public Student(int id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
-        this.rollNo = rollNo;
-        this.courseName = courseName;
-        this.averageMarks = averageMarks;
     }
 
-    public double calculateGrade() {
-        if (averageMarks >= 90) {
-            return 'A';
-        } else if (averageMarks >= 80) {
-            return 'B';
-        } else if (averageMarks >= 70) {
-            return 'C';
-        } else if (averageMarks >= 60) {
-            return 'D';
-        } else {
-            return 'F';
-        }
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
-    
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAge() {
         return age;
     }
-    
-    public int getRollNo() {
-        return rollNo;
+
+    public void setAge(int age) {
+        this.age = age;
     }
-    
-    public String getCourseName() {
-        return courseName;
+
+    // Method to display student details
+    public void displayStudent() {
+        System.out.println("ID: " + id + ", Name: " + name + ", Age: " + age);
     }
-    
-    public double getAverageMarks() {
-        return averageMarks;
-    }
-    
-    @Override
-    public String toString() {
-        return "Student [name=" + name + ", age=" + age + ", rollNo=" + rollNo + ", courseName=" + courseName + ", averageMarks=" + averageMarks + ", grade=" + calculateGrade() + "]";
-    }
-    
+}
+
+// Main class to manage students
+public class StudentManagementSystem {
+    private static ArrayList<Student> students = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        while (true) {
+            System.out.println("1. Add Student");
+            System.out.println("2. Update Student");
+            System.out.println("3. Display Students");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
 
-        int a = 1;
-
-        switch (a) {
-            a : 1 {
-                System.out.println("Inside Switch case 1");
-                break a;
-            }
-            a : 2 {
-                System.out.println("Inside Switch case 2");
-                break a;
+            switch (choice) {
+                case 1:
+                    addStudent();
+                    break;
+                case 2:
+                    updateStudent();
+                    break;
+                case 3:
+                    displayStudents();
+                    break;
+                case 4:
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
+    }
 
-        Student student1 = new Student("John Doe", 20, 101, "Computer Science", 85.5);
-        System.out.println(student1);
-        
-        Student student2 = new Student("Jane Smith", 19, 102, "Mathematics", 92.0);
-        System.out.println(student2);
+    // Method to add a student
+    private static void addStudent() {
+        System.out.print("Enter Student ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter Student Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Student Age: ");
+        int age = scanner.nextInt();
+
+        Student student = new Student(id, name, age);
+        students.add(student);
+        System.out.println("Student added successfully.");
+    }
+
+    // Method to update a student
+    private static void updateStudent() {
+        System.out.print("Enter Student ID to update: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        for (Student student : students) {
+            if (student.getId() == id) {
+                System.out.print("Enter new name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter new age: ");
+                int age = scanner.nextInt();
+
+                student.setName(name);
+                student.setAge(age);
+                System.out.println("Student updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Student not found.");
+    }
+
+    // Method to display all students
+    private static void displayStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students to display.");
+        } else {
+            for (Student student : students) {
+                student.displayStudent();
+            }
+        }
     }
 }
