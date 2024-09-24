@@ -18,6 +18,7 @@ public class FactorialGenerator {
         // Calculating factorial using while loop
         long factorialWhile = factorialUsingWhileLoop(number);
         System.out.println("Factorial of " + number + " using while loop is: " + factorialWhile);
+        scanner.close();
     }
 
     /**
