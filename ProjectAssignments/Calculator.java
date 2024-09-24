@@ -1,4 +1,6 @@
-package ProjectAssignments;
+import java.util.Scanner;
+
+// package ProjectAssignments;
 
 /**
  * Calculator class to perform basic arithmetic operations and calculate area and volume of shapes.
