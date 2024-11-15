@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class AirthmeticOperation {
+    public static void main(String[] args) {
+        // Using wrapper classes to perform arithmetic operations
+        Integer num1 = 10;
+        Integer num2 = 5;
+
+        // Addition
+        Integer sum = num1 + num2;
+        System.out.println("Sum: " + sum);
+
+        // Subtraction
+        Integer difference = num1 - num2;
+        System.out.println("Difference: " + difference);
+
+        // Multiplication
+        Integer product = num1 * num2;
+        System.out.println("Product: " + product);
+
+        // Division
+        Integer quotient = num1 / num2;
+        System.out.println("Quotient: " + quotient);
+
+        // Modulus
+        Integer remainder = num1 % num2;
+        System.out.println("Remainder: " + remainder);
+    }
+}

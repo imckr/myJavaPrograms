@@ -1,0 +1,16 @@
+public class CompareTwoNumbers {
+    public static void main(String[] args) {
+        Integer num1 = 10;
+        Integer num2 = 20;
+
+        int comparisonResult = num1.compareTo(num2);
+
+        if (comparisonResult > 0) {
+            System.out.println(num1 + " is greater than " + num2);
+        } else if (comparisonResult < 0) {
+            System.out.println(num1 + " is less than " + num2);
+        } else {
+            System.out.println(num1 + " is equal to " + num2);
+        }
+    }
+}

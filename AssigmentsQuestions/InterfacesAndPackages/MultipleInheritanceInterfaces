@@ -1,0 +1,27 @@
+// File: /c:/Users/CHANDRA/Documents/Github/myJavaPrograms/AssigmentsQuestions/InterfacesAndPackages/MultipleInheritanceInterfaces/MultipleInheritanceDemo.java
+
+interface InterfaceA {
+    void methodA();
+}
+
+interface InterfaceB {
+    void methodB();
+}
+
+class ConcreteClass implements InterfaceA, InterfaceB {
+    public void methodA() {
+        System.out.println("Method A from InterfaceA");
+    }
+
+    public void methodB() {
+        System.out.println("Method B from InterfaceB");
+    }
+}
+
+public class MultipleInheritanceDemo {
+    public static void main(String[] args) {
+        ConcreteClass obj = new ConcreteClass();
+        obj.methodA();
+        obj.methodB();
+    }
+}

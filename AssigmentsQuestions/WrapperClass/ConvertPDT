@@ -1,0 +1,21 @@
+public class ConvertPDT {
+    public static void main(String[] args) {
+        // Primitive data types
+        int intValue = 10;
+        double doubleValue = 20.5;
+        char charValue = 'A';
+        boolean booleanValue = true;
+
+        // Converting primitive data types into objects using wrapper classes
+        Integer intObject = Integer.valueOf(intValue);
+        Double doubleObject = Double.valueOf(doubleValue);
+        Character charObject = Character.valueOf(charValue);
+        Boolean booleanObject = Boolean.valueOf(booleanValue);
+
+        // Printing the objects
+        System.out.println("Integer object: " + intObject);
+        System.out.println("Double object: " + doubleObject);
+        System.out.println("Character object: " + charObject);
+        System.out.println("Boolean object: " + booleanObject);
+    }
+}

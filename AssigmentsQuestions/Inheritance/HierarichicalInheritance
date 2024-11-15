@@ -1,0 +1,33 @@
+// Base class
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+// Derived class
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+// Derived class
+class Rectangle extends Shape {
+    void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+public class HierarchicalInheritance {
+    public static void main(String[] args) {
+        Shape shape = new Shape();
+        shape.draw();
+
+        Circle circle = new Circle();
+        circle.draw();
+
+        Rectangle rectangle = new Rectangle();
+        rectangle.draw();
+    }
+}
